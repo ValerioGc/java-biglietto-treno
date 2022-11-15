@@ -13,18 +13,25 @@ public class CalcolaBiglietto {
 		int userAge = scn.nextInt();
 		scn.close();		
 		
-		float kmPrice = 0.21f;
+		double kmPrice = 0.21d;
+		int i = 0;
+		double priceKm = 0;
+		while(i < userDistance) {
+			priceKm = kmPrice + 0.1d;
+			i++;
+		}
+		
 		int underDiscount = 20;
 		int overDiscount = 40;
 		char eur = '\u20ac';
 		System.out.println("L'utente ha " + userAge + " anni e deve percorrere " + userDistance + "km");
-		float finalPrice =  userDistance * kmPrice;
+		double finalPrice =  userDistance * priceKm;
 		
 		if ((userAge >= 12) && (userAge < 18)) {
-			float underPrice = finalPrice - (finalPrice * underDiscount / 100);
+			double underPrice = finalPrice - (finalPrice * underDiscount / 100);
 			System.out.println("Il costo del biglietto è di: " + underPrice);
 		} else if (userAge >= 65) {
-			float overPrice = finalPrice - (finalPrice * overDiscount / 100);
+			double overPrice = finalPrice - (finalPrice * overDiscount / 100);
 			System.out.println("Il costo del biglietto è di: " + overPrice);
 		} else if (userAge < 12)  {
 			System.out.println("Il biglietto è gratuito");
