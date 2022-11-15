@@ -16,7 +16,7 @@ public class CalcolaBiglietto {
 		double kmPrice = 0.21d;
 		int i = 0;
 		double priceKm = 0;
-		while(i < userDistance) {
+		while(i <= userDistance) {
 			priceKm = kmPrice + 0.1d;
 			i++;
 		}
